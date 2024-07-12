@@ -5,7 +5,7 @@
 A classic html strcture looks like this:
 
 ```html
-<!doctype>
+<!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
@@ -17,17 +17,9 @@ A classic html strcture looks like this:
 </html>
 ```
 
-## Void element
-
-A void element is an element in HTML that cannot have any child notes.
-
-And, self-closing tags (`<tags />`) do not exist in HTML, they are just ignored. 
-
-Be aware that elements like `<script>` or `<ul>` is NOT void element, and they do require a closing tag.
-
 ## doctype
 
-The need for a doctype at the top of HTML documents. Its original intended purpose, and the fact that now it is somewhat of a historical artifact.
+The need for a doctype at the top of HTML documents. Its original intended purpose, and now it is somewhat of a historical artifact.
 
 ## `lang` attribute
 
@@ -46,6 +38,10 @@ The head's job is to contain metadata about the document.
 ### title
 
 `<title>` element is the title of the overall HTML document, and will also be the name for bookmark if you're trying to bookmark the page.
+
+```html
+<title>This is your title</title>
+```
 
 ### meta
 
@@ -91,5 +87,23 @@ It's worth noting that the `<script>` element is not a void element, and so it n
 ```html
 <script>
   console.log('hi, there')
-<script>
+</script>
 ```
+
+Checkout this diagram to learn about the different strategies of loading a JavaScript script:
+
+![Script loading strategies](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/async-defer.jpg)
+
+- `<script>` blocks the parsing of HTML, and the code is executed immediately after the script is loaded
+- `<script defer>` never blocks the parsing of HTML, the script is downloaded in a background task, and will only be executed after the HTML is finished parsing
+- `<script async>` downloads the script in a background task without blocking the parsing of HTML like `defer` does, but the script is executed immediately after the download, and the execution will block the HTML parsing process
+
+## void element
+
+A void element is an element in HTML that CANNOT have any child notes, albeit you can add them programmatcially, it's not reccommended.
+
+All void elements in HTML can be checked at [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Void_element).
+
+Be aware that elements like `<script>` or `<ul>` is NOT void element, and they do require a closing tag.
+
+And, self-closing tags (`<tags />`) do not exist in HTML, they are just ignored.
