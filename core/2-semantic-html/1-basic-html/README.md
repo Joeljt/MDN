@@ -59,7 +59,7 @@ The head's job is to contain metadata about the document.
   ```
 
 - Open Graph Data
-  The metadata protocol invented by Facebook to provide richer metadata for websites.
+  The metadata protocol invented by Facebook to provide richer metadata for websites, setting these for social media platforms benefits.
   ```html
   <meta property="og:image" content="your image address">
   <meta property="og:description" content="your description for your website">
